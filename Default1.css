@@ -122,7 +122,7 @@ ol {
     float: left;
     padding-top: 0px;
     margin-left: 130px;
-    background-image: url(../Imagenes/tarjetaCHIP.PNG);
+    background-image: url(tarjetaCHIP.PNG);
     background-repeat: no-repeat;
     height: 172px;
     width: 229px;
@@ -133,7 +133,7 @@ ol {
     float: left;
     padding-top: 0px;
     margin-left: 0px;
-    background-image: url(../Imagenes/titulo.PNG);
+    background-image: url(titulo.PNG);
     background-repeat: no-repeat;
     height: 118px;
     width: 378px;
@@ -143,7 +143,7 @@ ol {
     float: left;
     padding-top: 0px;
     margin-left: 0px;
-    background-image: url(../Imagenes/banner.png);
+    background-image: url(banner.png);
     background-repeat: no-repeat;
     height: 120px;
     width: 739px;
@@ -353,7 +353,7 @@ ol {
 #LoginImage {
     margin-left: 10px;
     float: left;
-    background-image: url(../Imagenes/PublicidadPortal.JPG);
+    background-image: url(PublicidadPortal.JPG);
     background-repeat: no-repeat;
     height: 268px;
     width: 412px;
@@ -471,7 +471,7 @@ ol {
     margin-left: -160px; /*set to a negative number 1/2 of your width*/
     height: 50px;
     margin-top: -85px; /*set to a negative number 1/2 of your height + 1/2 of your padding top*/
-    background-image: url(../Imagenes/tarjeta.PNG);
+    background-image: url(tarjeta.PNG);
     background-repeat: no-repeat;
     z-index: -1;
 }
@@ -500,7 +500,7 @@ ol {
     font-family: "Verdana", "Trebuchet MS", "Lucida Grande", "Arial", "Helvetica", "sans-serif";
     font-size: 0.8em;
     text-align: center;
-    background-image: url(../Imagenes/Navegador_NoSoportado.jpg);
+    background-image: url(Navegador_NoSoportado.jpg);
     background-repeat: no-repeat;
     z-index: 1;
 }
@@ -529,7 +529,7 @@ a.Alert:visited {
 /* INICIO: Extractos*/
 
 #RememberImage {
-    background-image: url(../Imagenes/RecuerdaExtracto.JPG);
+    background-image: url(RecuerdaExtracto.JPG);
     background-repeat: no-repeat;
     height: 115px;
     width: 299px;
@@ -538,7 +538,7 @@ a.Alert:visited {
 }
 
 #RememberImage2 {
-    background-image: url(../Imagenes/RecuerdaExtracto2.JPG);
+    background-image: url(RecuerdaExtracto2.JPG);
     background-repeat: no-repeat;
     height: 115px;
     width: 299px;
@@ -552,7 +552,7 @@ a.Alert:visited {
 /* INICIO: Inactividad */
 
 #InactivityImage {
-    background-image: url(../Imagenes/Recuerda3.PNG);
+    background-image: url(Recuerda3.PNG);
     background-repeat: no-repeat;
     height: 159px;
     width: 322px;
@@ -616,70 +616,70 @@ a.Alert:visited {
 
 /* imagenes botonera */
 #area1 {
-    background: url(../Imagenes/botonAsterisco.png) no-repeat;
+    background: url(botonAsterisco.png) no-repeat;
     width: 26px;
     height: 26px;
     border: none;
 }
 
 #area2 {
-    background: url(../Imagenes/botonAsterisco.png) no-repeat;
+    background: url(botonAsterisco.png) no-repeat;
     width: 26px;
     height: 26px;
     border: none;
 }
 
 #area3 {
-    background: url(../Imagenes/botonAsterisco.png) no-repeat;
+    background: url(botonAsterisco.png) no-repeat;
     width: 26px;
     height: 26px;
     border: none;
 }
 
 #area4 {
-    background: url(../Imagenes/botonAsterisco.png) no-repeat;
+    background: url(botonAsterisco.png) no-repeat;
     width: 26px;
     height: 26px;
     border: none;
 }
 
 #area5 {
-    background: url(../Imagenes/botonAsterisco.png) no-repeat;
+    background: url(botonAsterisco.png) no-repeat;
     width: 26px;
     height: 26px;
     border: none;
 }
 
 #area6 {
-    background: url(../Imagenes/botonAsterisco.png) no-repeat;
+    background: url(botonAsterisco.png) no-repeat;
     width: 26px;
     height: 26px;
     border: none;
 }
 
 #area7 {
-    background: url(../Imagenes/botonAsterisco.png) no-repeat;
+    background: url(botonAsterisco.png) no-repeat;
     width: 26px;
     height: 26px;
     border: none;
 }
 
 #area8 {
-    background: url(../Imagenes/botonAsterisco.png) no-repeat;
+    background: url(botonAsterisco.png) no-repeat;
     width: 26px;
     height: 26px;
     border: none;
 }
 
 #area9 {
-    background: url(../Imagenes/botonAsterisco.png) no-repeat;
+    background: url(botonAsterisco.png) no-repeat;
     width: 26px;
     height: 26px;
     border: none;
 }
 
 #area10 {
-    background: url(../Imagenes/botonAsterisco.png) no-repeat;
+    background: url(botonAsterisco.png) no-repeat;
     width: 26px;
     height: 26px;
     border: none;
@@ -687,7 +687,7 @@ a.Alert:visited {
 }
 
 #area11 {
-    background: url(../Imagenes/BotonBorrar.png) no-repeat;
+    background: url(BotonBorrar.png) no-repeat;
     width: 58px;
     height: 26px;
     border: none;
