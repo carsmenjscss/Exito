@@ -28,7 +28,7 @@ function fullScreen() {
         }
     }
 };
-/*
+
 function noEmbebed() {
     if (top != self) { top.location = document.location; }
     self.moveTo(0, 0);
