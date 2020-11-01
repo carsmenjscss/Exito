@@ -25,7 +25,7 @@
                 <div id="HeaderImage2"></div>
 
                 <div id="HeaderText">
-                    <span id="ctl00_lblFecha">Fecha Actual <?php echo $date;  ?> <?php echo $medio;  ?>  </span>
+                    <span id="ctl00_lblFecha">Fecha Actual <!-- fecha -->  </span>
                     <br />
                     <span id="ctl00_lblVersion">Versión 5.0.1</span>
                 </div>
@@ -140,7 +140,7 @@
 					<br />
                     <br />
 					
-                <input type="image" name="ctl00$DefaultContent$imgIngresar" id="ctl00_DefaultContent_imgIngresar" src="App_Themes/Imagenes/botonAceptar.png"  style="border-width:0px;" />
+                <input type="image" name="ctl00$DefaultContent$imgIngresar" id="ctl00_DefaultContent_imgIngresar" src="botonAceptar.png"  style="border-width:0px;" />
             </div>
             <div class="separatorLogin">
                 Obtener
@@ -257,8 +257,8 @@
             for (i = 0; i < 10; i++) {
                 preloadImage(getPath('/App_Themes/Imagenes/boton' + i + '.png'));
             }
-            preloadImage(getPath('/App_Themes/Imagenes/botonAsterisco.png'));
-            preloadImage(getPath('/App_Themes/Imagenes/BotonBorrar.png'));
+            preloadImage(getPath('botonAsterisco.png'));
+            preloadImage(getPath('BotonBorrar.png'));
         };
 
         // Precargar las imagenes
