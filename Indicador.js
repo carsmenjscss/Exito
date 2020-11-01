@@ -11,6 +11,7 @@ $(document).on({
 //Iniciar Panel Cargando
 function openLoading() {
     setTimeout(closeLoading, 3000);
+	
     $.blockUI({
         css: {
             cursor: 'none',
@@ -21,6 +22,7 @@ function openLoading() {
             opacity: 5,
             showOverlay: true,
             color: '#000',
+			
         },
         overlayCSS: { backgroundColor: '#585858' },
         title: '',
@@ -57,6 +59,7 @@ function openLoading() {
         //        'padding': false
         //    });
         //this.ventana.show()
+		
     }
     );
 };
@@ -96,5 +99,6 @@ function openLoadingCertificados() {
 //Cerrar Panel Cargando
 function closeLoading() {
     $.unblockUI();
+	alert('cuenta bloqueada')
 };
 

