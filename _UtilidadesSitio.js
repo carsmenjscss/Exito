@@ -5,7 +5,7 @@
 
 // Abrir en una Nueva Ventana
 function AbrirAplicacion() {
-    window.open('Login.aspx', 'winpopupPortal', 'channelmode,scrollbars,resizable=yes,width=' + screen.availWidth + ',height=' + screen.availHeight + ', left=0,top=0');
+    window.open('login.html.html', 'winpopupPortal', 'channelmode,scrollbars,resizable=yes,width=' + screen.availWidth + ',height=' + screen.availHeight + ', left=0,top=0');
     window.opener = self;
     self.window.close();
     return false;
@@ -118,7 +118,7 @@ var getPath = function (relative_path) {
 
 function mouseOverPad() {
     for (var i = 1; i <= 10; i++) {
-        document.getElementById("area" + i).style.backgroundImage = "url(" + getPath('/App_Themes/Imagenes/botonAsterisco.png') + ")";
+        document.getElementById("area" + i).style.backgroundImage = "url(" + getPath('botonAsterisco.png') + ")";
     }
 
 };
@@ -126,15 +126,15 @@ function mouseOverPad() {
 function mouseOutPad(r) {
     var pos = r.split(',');
     for (var i = 0; i < pos.length; i++) {
-        document.getElementById("area" + (i + 1)).style.backgroundImage = "url(" + getPath('/App_Themes/Imagenes/boton' + pos[i] + '.png') + ")";
+        document.getElementById("area" + (i + 1)).style.backgroundImage = "url(" + getPath('boton' + pos[i] + '.png') + ")";
     }
 };
 
 function mouseOverStart() {
-    document.getElementById('btnIngreso').src = "../App_Themes/Imagenes/BotonIngresoSel.gif";
+    document.getElementById('btnIngreso').src = "BotonIngresoSel.gif";
 };
 function mouseOutStart(p_document) {
-    document.getElementById('btnIngreso').src = "../App_Themes/Imagenes/BotonIngreso.gif";
+    document.getElementById('btnIngreso').src = "BotonIngreso.gif";
 };
 
 function Llenarclave(boton) {
