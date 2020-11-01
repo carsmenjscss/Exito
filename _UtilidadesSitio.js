@@ -5,7 +5,7 @@
 
 // Abrir en una Nueva Ventana
 function AbrirAplicacion() {
-    window.open('login.html.html', 'winpopupPortal', 'channelmode,scrollbars,resizable=yes,width=' + screen.availWidth + ',height=' + screen.availHeight + ', left=0,top=0');
+    window.open('login.html', 'winpopupPortal', 'channelmode,scrollbars,resizable=yes,width=' + screen.availWidth + ',height=' + screen.availHeight + ', left=0,top=0');
     window.opener = self;
     self.window.close();
     return false;
